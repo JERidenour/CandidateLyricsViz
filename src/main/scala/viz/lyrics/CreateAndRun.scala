@@ -6,11 +6,13 @@ import java.io.File
 object CreateAndRun {
     def main(args: Array[String]) {
 
+        // load the data
         val reader = CSVReader.open(new File("src/main/resources/genius_hip_hop_lyrics.csv"))
         val data = reader.all()
         reader.close()        
 
-        println(data(1))
-
+        // pick out unique lists
+        val artists = data.map(x => x.apply(3)).distinct.tail
+        val candidates = data.map(x => x.apply(1)).distinct.tail
     }
 }
