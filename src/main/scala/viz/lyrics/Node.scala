@@ -12,12 +12,16 @@ class Node {
 
     def rightName_= (in:String):Unit = _rightName = in
     def leftName_= (in:String):Unit = _leftName = in
+
+    override def toString: String = {
+        s"$rightName, $leftName"
+    }
 }
 
 object Node {
 
     // basic constuctor
-    def apply(rn: String, ln: String) {
+    def apply(rn: String, ln: String) = {
 
         var n = new Node
         n.rightName = rn
