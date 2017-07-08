@@ -3,29 +3,29 @@ package viz.lyrics
 class Node {
 
     // fields
-    private var _rightName = ""
     private var _leftName = ""
+    private var _rightName = ""
 
     // getters & setters
-    def rightName = _rightName
     def leftName = _leftName
+    def rightName = _rightName
 
-    def rightName_= (in:String):Unit = _rightName = in
     def leftName_= (in:String):Unit = _leftName = in
+    def rightName_= (in:String):Unit = _rightName = in
 
     override def toString: String = {
-        s"$rightName, $leftName"
+        s"$leftName -- $rightName"
     }
 }
 
 object Node {
 
     // basic constuctor
-    def apply(rn: String, ln: String) = {
+    def apply(ln: String, rn: String) = {
 
         var n = new Node
-        n.rightName = rn
         n.leftName = ln
+        n.rightName = rn
         n
 
     }
