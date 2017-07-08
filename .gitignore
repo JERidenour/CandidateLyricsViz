@@ -1,0 +1,6 @@
+# compiled folders
+project/
+target/
+
+# vim buffer
+*.swp
