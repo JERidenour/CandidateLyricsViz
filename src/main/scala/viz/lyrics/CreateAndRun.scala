@@ -10,5 +10,7 @@ object CreateAndRun {
         val data = reader.all()
         reader.close()        
 
+        println(data(1))
+
     }
 }
