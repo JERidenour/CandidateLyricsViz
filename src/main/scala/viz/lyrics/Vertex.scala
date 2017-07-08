@@ -2,7 +2,10 @@ package viz.lyrics
 
 class Vertex {
 
-    // fields
+    /* fields
+    / names should be clean of any characters not allowed by graphviz
+    / colors should be hex-formated
+    */ 
     private var _leftName = ""
     private var _rightName = ""
     private var _color = "#FFFFFF"
