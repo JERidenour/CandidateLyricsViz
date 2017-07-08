@@ -26,6 +26,5 @@ object Node {
         var n = new Node 
         n.label = lab 
         n
-
     }
 }
