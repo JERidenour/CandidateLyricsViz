@@ -1,3 +1,5 @@
+package viz.lyrics
+
 import com.github.tototoshi.csv._
 import java.io.File
 
