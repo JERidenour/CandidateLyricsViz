@@ -20,7 +20,7 @@ class Vertex {
     def color_= (in:String):Unit = _color = in
 
     override def toString: String = {
-        s"""$leftName -- $rightName [color="$color"]"""
+        s"""$leftName -- $rightName [color="$color"];"""
     }
 }
 

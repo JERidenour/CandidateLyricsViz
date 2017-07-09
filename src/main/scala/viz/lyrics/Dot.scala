@@ -19,6 +19,14 @@ class Dot {
     def preamble_= (in:String):Unit = _preamble = in
     def postscript_= (in:String):Unit = _postscript = in
 
+    override def toString: String = {
+
+        var s = this.preamble
+        s += this.nodeBuffer.mkString
+        s += this.vertexBuffer.mkString
+        s += this.postscript
+        s
+    }
 }
 
 object Dot {
