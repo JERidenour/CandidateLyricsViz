@@ -4,6 +4,7 @@ import com.github.tototoshi.csv._
 import java.io.File
 import java.nio.file.{Paths, Files}
 import java.nio.charset.StandardCharsets
+import sys.process._
 
 object CreateAndRun {
     def main(args: Array[String]) {
@@ -27,8 +28,6 @@ object CreateAndRun {
         
         for( c <- 0 to (candidates.length-1) ){
 
-            println(c)
-
             // for each candidate get it's subset
             val subset = data.filter( (r:List[String]) => r.apply(1) == candidates(c) ) 
         
@@ -50,5 +49,7 @@ object CreateAndRun {
 
     Files.write(Paths.get("src/main/resources/Output.dot"), 
         dot.toString.getBytes(StandardCharsets.UTF_8))
+
+    "neato src/main/resources/Output.dot -Tsvg -osrc/main/resources/graph.svg " !
     }
 }
