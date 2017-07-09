@@ -31,12 +31,27 @@ class Node {
 
 object Node {
 
+    def createName(label: String) = {
+        label
+            .replace(" ", "_")
+            .replace(".", "")
+            .replace("""(""", "")
+            .replace(""")""", "")
+            .replace("&", "and")
+            .replace("-", "")
+            .replace(""""""", "")
+            .replace("""'""", "")
+            .replace("""[""", "")
+            .replace("""]""", "")
+            .replace("$", "S")
+
+    }
     // basic constuctor
     def apply(lab: String) = {
 
         var n = new Node 
         n.label = lab 
-        n.name = lab
+        n.name = createName(lab)
         n
     }
 }
