@@ -25,8 +25,10 @@ object CreateAndRun {
         
         for( c <- 0 to (candidates.length-1) ){
 
+            println(c)
+
             // for each candidate get it's subset
-            val subset = data.filter( (r:List[String]) => r.apply(1) == c  ) 
+            val subset = data.filter( (r:List[String]) => r.apply(1) == candidates(c) ) 
         
             // get the artists for that subset
             val subArtists = subset.map(x => x.apply(3)).distinct.tail
