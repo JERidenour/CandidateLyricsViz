@@ -16,7 +16,11 @@ object CreateAndRun {
         val artists = data.map(x => x.apply(3)).distinct.tail
         val candidates = data.map(x => x.apply(1)).distinct.tail
 
+        val dot = new Dot()
+
         // create a node for each artist
+        artists.foreach { dot.nodeBuffer += Node.apply(_)  }
+        
         // create verticies
         // print the dot file
     }
