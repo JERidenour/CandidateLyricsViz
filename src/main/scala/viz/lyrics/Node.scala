@@ -16,6 +16,17 @@ class Node {
     override def toString: String = {
         s"""$name [label = "$label"];"""
     }
+
+    def canEqual(a: Any) = a.isInstanceOf[Node]
+
+    override def equals(that: Any): Boolean = that match {
+            case that: Node => that.canEqual(this) && this.hashCode == that.hashCode
+            case _ => false
+    }
+
+    override def hashCode: Int = {
+        (if (this.name == null) 0 else this.name.hashCode)
+    }
 }
 
 object Node {
@@ -25,6 +36,7 @@ object Node {
 
         var n = new Node 
         n.label = lab 
+        n.name = lab
         n
     }
 }
