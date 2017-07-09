@@ -22,6 +22,21 @@ class Vertex {
     override def toString: String = {
         s"""$leftName -- $rightName [color="$color"];"""
     }
+
+    def canEqual(a: Any) = a.isInstanceOf[Vertex]
+
+    override def equals(that: Any): Boolean = that match {
+        case that: Vertex => that.canEqual(this) && this.hashCode == that.hashCode
+        case _ => false
+    }
+
+    override def hashCode: Int = {
+        if ( (this.leftName==null) || (this.rightName==null) || (this.color==null) ) {
+            0
+        } else {
+            this.leftName.hashCode + this.rightName.hashCode + this.color.hashCode
+        }
+    }
 }
 
 object Vertex {
