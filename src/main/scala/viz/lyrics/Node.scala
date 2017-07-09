@@ -31,8 +31,8 @@ class Node {
 
 object Node {
 
-    def createName(label: String) = {
-        label
+    def createName(input: String) = {
+       input 
             .replace(" ", "_")
             .replace(".", "")
             .replace("""(""", "")
@@ -46,12 +46,21 @@ object Node {
             .replace("$", "S")
 
     }
+
+    def createLabel(input: String) = {
+       input 
+            .replace(""""""", "")
+            .replace("""'""", "")
+
+    }
+
+
     // basic constuctor
-    def apply(lab: String) = {
+    def apply(input: String) = {
 
         var n = new Node 
-        n.label = lab 
-        n.name = createName(lab)
+        n.label = createLabel(input) 
+        n.name = createName(input)
         n
     }
 }
