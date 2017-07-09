@@ -2,6 +2,8 @@ package viz.lyrics
 
 import com.github.tototoshi.csv._
 import java.io.File
+import java.nio.file.{Paths, Files}
+import java.nio.charset.StandardCharsets
 
 object CreateAndRun {
     def main(args: Array[String]) {
@@ -45,9 +47,8 @@ object CreateAndRun {
                 }
             }
         }
-        
-        println(dot.toString)
 
-
+    Files.write(Paths.get("src/main/resources/Output.dot"), 
+        dot.toString.getBytes(StandardCharsets.UTF_8))
     }
 }
