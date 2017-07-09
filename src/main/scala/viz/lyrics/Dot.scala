@@ -23,7 +23,7 @@ class Dot {
 
         var s = this.preamble
         s += this.nodeBuffer.mkString
-        s += this.vertexBuffer.mkString
+        s += this.vertexBuffer.distinct.mkString
         s += this.postscript
         s
     }
