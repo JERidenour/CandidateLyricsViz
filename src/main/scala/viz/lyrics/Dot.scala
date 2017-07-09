@@ -28,11 +28,3 @@ class Dot {
         s
     }
 }
-
-object Dot {
-
-    def apply()={
-
-
-    }
-}
