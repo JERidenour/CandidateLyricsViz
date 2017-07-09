@@ -41,12 +41,28 @@ class Vertex {
 
 object Vertex {
 
+    def createName(label: String) = {
+        label
+            .replace(" ", "_")
+            .replace(".", "")
+            .replace("""(""", "")
+            .replace(""")""", "")
+            .replace("&", "and")
+            .replace("-", "")
+            .replace(""""""", "")
+            .replace("""'""", "")
+            .replace("""[""", "")
+            .replace("""]""", "")
+            .replace("$", "S")
+
+    }
+
     // basic constuctor
     def apply(ln: String, rn: String, c: String) = {
 
         var v = new Vertex 
-        v.leftName = ln
-        v.rightName = rn
+        v.leftName = createName(ln)
+        v.rightName = createName(rn)
         v.color = c
         v
     }
