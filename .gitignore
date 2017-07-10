@@ -10,3 +10,6 @@ src/main/resources
 
 # data files
 *.csv
+
+# this thing
+*.DS_Store
