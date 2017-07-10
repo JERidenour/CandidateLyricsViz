@@ -18,8 +18,6 @@ object CreateAndRun {
         // pick out unique lists
         val artists = data.map(x => x.apply(3)).distinct.tail
         val candidates = data.map(x => x.apply(1)).distinct.tail
-//        val candidateColors = Array("#b06660", "#d9a88f", "#ca8f42", 
-//            "#ab9c73", "#537703", "#9baf8e", "#6a7d8e", "#dbad72")
         val candidateColors = Array("#493829", "#3e000c", "#564787", 
             "#8ed081", "#404f24", "#4c86a8", "#360568", "#9e2a2b")
 
@@ -34,7 +32,7 @@ object CreateAndRun {
             val subset = data.filter( (r:List[String]) => r.apply(1) == candidates(c) ) 
         
             // get the artists for that subset
-            val subArtists = subset.map(x => x.apply(3)).distinct.tail
+            val subArtists = subset.map(x => x.apply(3)).distinct
 
             for( sa <- subArtists){
             
