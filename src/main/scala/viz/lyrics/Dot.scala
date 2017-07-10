@@ -6,7 +6,7 @@ class Dot {
 
     private var _preamble = "graph g { " +
         //"graph [overlap=false outputorder=edgesfirst dpi=16];" +
-        "graph [overlap=false outputorder=edgesfirst size=8];" +
+        "graph [overlap=false outputorder=edgesfirst size=24];" +
         "node [style=filled fillcolor=white];"
     
     private var _postscript = "}"
