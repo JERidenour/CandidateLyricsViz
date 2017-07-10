@@ -2,15 +2,10 @@ package viz.lyrics
 
 class Vertex {
 
-    /* fields
-    / names should be clean of any characters not allowed by graphviz
-    / colors should be hex-formated
-    */ 
     private var _leftName = ""
     private var _rightName = ""
     private var _color = "#FFFFFF"
 
-    // getters & setters
     def leftName = _leftName
     def rightName = _rightName
     def color = _color
@@ -30,6 +25,7 @@ class Vertex {
         case _ => false
     }
 
+    // set the hash code to the sum, since they are non-directional
     override def hashCode: Int = {
         if ( (this.leftName==null) || (this.rightName==null) || (this.color==null) ) {
             0
@@ -41,6 +37,7 @@ class Vertex {
 
 object Vertex {
 
+    // weed out characters not accpeted by graphviz
     def createName(label: String) = {
         label
             .replace(" ", "_")
@@ -62,7 +59,6 @@ object Vertex {
 
     }
 
-    // basic constuctor
     def apply(ln: String, rn: String, c: String) = {
 
         var v = new Vertex 

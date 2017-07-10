@@ -2,11 +2,9 @@ package viz.lyrics
 
 class Node {
 
-    // fields
     private var _name = ""
     private var _label = ""
 
-    // getters & setters
     def name = _name
     def label = _label
 
@@ -31,6 +29,7 @@ class Node {
 
 object Node {
 
+    // weed out characters not accepted by graphviz
     def createName(input: String) = {
        input 
             .replace(" ", "_")
@@ -59,8 +58,6 @@ object Node {
 
     }
 
-
-    // basic constuctor
     def apply(input: String) = {
 
         var n = new Node 

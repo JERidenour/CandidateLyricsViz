@@ -47,9 +47,11 @@ object CreateAndRun {
             }
         }
 
+    // write to file
     Files.write(Paths.get("src/main/resources/Output.dot"), 
         dot.toString.getBytes(StandardCharsets.UTF_8))
 
+    // system call to graphviz
     "neato src/main/resources/Output.dot -Tsvg -osrc/main/resources/graph.svg " !
     }
 }
