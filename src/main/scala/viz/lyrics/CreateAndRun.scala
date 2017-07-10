@@ -41,8 +41,8 @@ object CreateAndRun {
 
                 for(sac <- compArtists){
 
-                    // create vertex for each such pair
-                    dot.vertexBuffer += Vertex.apply(sa, sac, candidateColors.apply(c))
+                    // create edge for each such pair
+                    dot.edgeBuffer += Edge.apply(sa, sac, candidateColors.apply(c))
                 }
             }
         }

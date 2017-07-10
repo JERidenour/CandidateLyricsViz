@@ -1,6 +1,6 @@
 package viz.lyrics
 
-class Vertex {
+class Edge {
 
     private var _leftName = ""
     private var _rightName = ""
@@ -18,10 +18,10 @@ class Vertex {
         s"""$leftName -- $rightName [color="$color"];"""
     }
 
-    def canEqual(a: Any) = a.isInstanceOf[Vertex]
+    def canEqual(a: Any) = a.isInstanceOf[Edge]
 
     override def equals(that: Any): Boolean = that match {
-        case that: Vertex => that.canEqual(this) && this.hashCode == that.hashCode
+        case that: Edge => that.canEqual(this) && this.hashCode == that.hashCode
         case _ => false
     }
 
@@ -35,7 +35,7 @@ class Vertex {
     }
 }
 
-object Vertex {
+object Edge {
 
     // weed out characters not accpeted by graphviz
     def createName(label: String) = {
@@ -61,7 +61,7 @@ object Vertex {
 
     def apply(ln: String, rn: String, c: String) = {
 
-        var v = new Vertex 
+        var v = new Edge 
         v.leftName = createName(ln)
         v.rightName = createName(rn)
         v.color = c

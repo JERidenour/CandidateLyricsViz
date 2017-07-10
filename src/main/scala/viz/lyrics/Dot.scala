@@ -12,7 +12,7 @@ class Dot {
     private var _postscript = "}"
 
     var nodeBuffer = new ArrayBuffer[Node]
-    var vertexBuffer = new ArrayBuffer[Vertex]
+    var edgeBuffer = new ArrayBuffer[Edge]
     
     def preamble = _preamble
     def postscript = _postscript
@@ -24,7 +24,7 @@ class Dot {
 
         var s = this.preamble
         s += this.nodeBuffer.mkString
-        s += this.vertexBuffer.distinct.mkString
+        s += this.edgeBuffer.distinct.mkString
         s += this.postscript
         s
     }
