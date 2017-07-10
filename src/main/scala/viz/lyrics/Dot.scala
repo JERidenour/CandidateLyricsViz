@@ -5,7 +5,8 @@ import scala.collection.mutable.ArrayBuffer
 class Dot {
 
     private var _preamble = "graph g { " +
-        "graph [overlap=false outputorder=edgesfirst];" +
+        //"graph [overlap=false outputorder=edgesfirst dpi=16];" +
+        "graph [overlap=false outputorder=edgesfirst size=8];" +
         "node [style=filled fillcolor=white];"
     
     private var _postscript = "}"

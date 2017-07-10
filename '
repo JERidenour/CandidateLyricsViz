@@ -20,8 +20,8 @@ object CreateAndRun {
         val candidates = data.map(x => x.apply(1)).distinct.tail
 //        val candidateColors = Array("#b06660", "#d9a88f", "#ca8f42", 
 //            "#ab9c73", "#537703", "#9baf8e", "#6a7d8e", "#dbad72")
-        val candidateColors = Array("#493829", "#3e000c", "#564787", 
-            "#8ed081", "#404f24", "#4c86a8", "#360568", "#9e2a2b")
+        val candidateColors = Array("#493829", "#3e000c", "#8f3b1b", 
+            "#05a8aa", "#404f24", "#4c86a8", "#360568", "#9e2a2b")
 
         val dot = new Dot()
 
