@@ -6,7 +6,7 @@ import java.nio.file.{Paths, Files}
 import java.nio.charset.StandardCharsets
 import sys.process._
 
-object CandidateCluster {
+object CandidateHub {
     def main(args: Array[String]) {
 
         // load the data
@@ -23,8 +23,9 @@ object CandidateCluster {
 
         val dot = new Dot()
 
-        // create a node for each artist
+        // create a node for each artist and candidate
         artists.foreach { dot.nodeBuffer += Node.apply(_)  }
+        candidates.foreach { dot.nodeBuffer += Node.apply(_)  }
         
         for( c <- 0 to (candidates.length-1) ){
 
@@ -35,24 +36,17 @@ object CandidateCluster {
             val subArtists = subset.map(x => x.apply(3)).distinct
 
             for( sa <- subArtists){
-            
-                // for each artist get the companion artist set
-                val compArtists = subArtists.filter( (a:String) => a != sa  ) 
 
-                for(sac <- compArtists){
-
-                    // create edge for each such pair
-                    dot.edgeBuffer += Edge.apply(sa, sac, 
-                        candidateColors.apply(c), candidates(c))
-                }
+                // create edge from each artist to the candidate 
+                dot.edgeBuffer += Edge.apply(sa, candidates(c), candidateColors.apply(c))
             }
         }
 
     // write to file
-    Files.write(Paths.get("src/main/resources/CandidateCluster.dot"), 
+    Files.write(Paths.get("src/main/resources/CandidateHub.dot"), 
         dot.toString.getBytes(StandardCharsets.UTF_8))
 
     // system call to graphviz
-    "neato src/main/resources/CandidateCluster.dot -Tsvg -osrc/main/resources/CandidateCluster.svg " !
+    "neato src/main/resources/CandidateHub.dot -Tsvg -osrc/main/resources/CandidateHub.svg" ! 
     }
 }

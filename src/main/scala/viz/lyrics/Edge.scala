@@ -71,4 +71,12 @@ object Edge {
         v.tooltip = tp
         v
     }
+    def apply(ln: String, rn: String, c: String) = {
+
+        var v = new Edge 
+        v.leftName = createName(ln)
+        v.rightName = createName(rn)
+        v.color = c
+        v
+    }
 }
