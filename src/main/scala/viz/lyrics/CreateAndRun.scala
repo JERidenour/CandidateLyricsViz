@@ -42,7 +42,8 @@ object CreateAndRun {
                 for(sac <- compArtists){
 
                     // create edge for each such pair
-                    dot.edgeBuffer += Edge.apply(sa, sac, candidateColors.apply(c))
+                    dot.edgeBuffer += Edge.apply(sa, sac, 
+                        candidateColors.apply(c), candidates(c))
                 }
             }
         }

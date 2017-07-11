@@ -5,17 +5,20 @@ class Edge {
     private var _leftName = ""
     private var _rightName = ""
     private var _color = "#FFFFFF"
+    private var _tooltip = ""
 
     def leftName = _leftName
     def rightName = _rightName
     def color = _color
+    def tooltip = _tooltip
 
     def leftName_= (in:String):Unit = _leftName = in
     def rightName_= (in:String):Unit = _rightName = in
     def color_= (in:String):Unit = _color = in
+    def tooltip_= (in:String):Unit = _tooltip = in
 
     override def toString: String = {
-        s"""$leftName -- $rightName [color="$color"];"""
+        s"""$leftName -- $rightName [color="$color" label="$tooltip"];"""
     }
 
     def canEqual(a: Any) = a.isInstanceOf[Edge]
@@ -38,8 +41,8 @@ class Edge {
 object Edge {
 
     // weed out characters not accpeted by graphviz
-    def createName(label: String) = {
-        label
+    def createName(input: String) = {
+       input 
             .replace(" ", "_")
             .replace(".", "")
             .replace("""(""", "")
@@ -59,12 +62,13 @@ object Edge {
 
     }
 
-    def apply(ln: String, rn: String, c: String) = {
+    def apply(ln: String, rn: String, c: String, tp: String) = {
 
         var v = new Edge 
         v.leftName = createName(ln)
         v.rightName = createName(rn)
         v.color = c
+        v.tooltip = tp
         v
     }
 }
