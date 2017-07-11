@@ -6,7 +6,7 @@ import java.nio.file.{Paths, Files}
 import java.nio.charset.StandardCharsets
 import sys.process._
 
-object CreateAndRun {
+object CandidateCluster {
     def main(args: Array[String]) {
 
         // load the data
