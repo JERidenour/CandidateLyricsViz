@@ -19,7 +19,7 @@ object CandidateHub {
         val artists = data.map(x => x.apply(3)).distinct.tail
         val candidates = data.map(x => x.apply(1)).distinct.tail
         val candidateColors = Array("#493829", "#3e000c", "#564787", 
-            "#8ed081", "#404f24", "#4c86a8", "#360568", "#9e2a2b")
+            "#388659", "#404f24", "#4c86a8", "#360568", "#9e2a2b")
 
         val dot = new Dot()
 
