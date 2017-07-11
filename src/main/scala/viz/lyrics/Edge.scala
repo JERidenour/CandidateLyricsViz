@@ -18,7 +18,11 @@ class Edge {
     def tooltip_= (in:String):Unit = _tooltip = in
 
     override def toString: String = {
-        s"""$leftName -- $rightName [color="$color" label="$tooltip"];"""
+        if(this.tooltip==""){ 
+            s"""$leftName -- $rightName [color="$color"];"""
+        }else{
+            s"""$leftName -- $rightName [color="$color" label="$tooltip"];"""
+        }
     }
 
     def canEqual(a: Any) = a.isInstanceOf[Edge]
