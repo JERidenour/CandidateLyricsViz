@@ -43,7 +43,7 @@ object CandidateCluster {
 
                     // create edge for each such pair
                     dot.edgeBuffer += Edge.apply(sa, sac, 
-                        candidateColors.apply(c), candidates(c))
+                        candidateColors.apply(c))
                 }
             }
         }
