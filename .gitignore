@@ -15,5 +15,5 @@ src/main/resources
 *.DS_Store
 
 # get the preview photos
-! src/main/resources/CandidateCluster.png
-! src/main/resources/CandidateHub.png
+!src/main/resources/CandidateCluster.png
+!src/main/resources/CandidateHub.png
