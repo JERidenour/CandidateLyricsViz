@@ -13,3 +13,7 @@ src/main/resources
 
 # this thing
 *.DS_Store
+
+# get the preview photos
+! src/main/resources/CandidateCluster.png
+! src/main/resources/CandidateHub.png
