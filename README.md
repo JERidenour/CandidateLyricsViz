@@ -16,7 +16,7 @@ The "Candidate Cluster" graph takes a while to load so I made a smaller graph, "
 
 ## Interpretation
 
-The graphs are created using the `neato` graphviz compiler. The placement of the nodes is determined by modelling each edge as a spring and iteratively solving for a low-energy (equilibrium) configuration of nodes. Therefore those artists which appear close to one another on the graph are similar to one another in terms of which candidates they have mentioned.
+The graphs are created using the `neato` [graphviz](http://www.graphviz.org/) compiler. The placement of the nodes is determined by modelling each edge as a spring and iteratively solving for a low-energy (equilibrium) configuration of nodes. Therefore those artists which appear close to one another on the graph are similar to one another in terms of which candidates they have mentioned.
 
 ## Compile and run
 
