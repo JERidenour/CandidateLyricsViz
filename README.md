@@ -2,7 +2,7 @@
 
 ![Candidate Cluster png](https://github.com/JERidenour/CandidateLyricsViz/blob/master/src/main/resources/CandidateCluster.png)
 
-[Click here for a full size image of the CandidateHub graph](http://www.jonathanridenour.net/projects/candidate_hub.html).
+[Click here for a full size image of the Candidate Hub graph](http://www.jonathanridenour.net/projects/candidate_hub.html).
 
 ![Candidate Hub png](https://github.com/JERidenour/CandidateLyricsViz/blob/master/src/main/resources/CandidateHub.png)
 
