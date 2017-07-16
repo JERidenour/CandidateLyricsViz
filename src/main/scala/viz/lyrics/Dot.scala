@@ -21,9 +21,15 @@ class Dot {
     var edgeBuffer = new ArrayBuffer[Edge]
     
     def preamble = _preamble
+    def graphParam = _graphParam
+    def nodeParam = _nodeParam
+    def edgeParam = _edgeParam
     def postscript = _postscript
     
     def preamble_= (in:String):Unit = _preamble = in
+    def graphParam_= (in:String):Unit = _graphParam = in
+    def edgeParam_= (in:String):Unit = _edgeParam = in
+    def nodeParam_= (in:String):Unit = _nodeParam = in
     def postscript_= (in:String):Unit = _postscript = in
 
     override def toString: String = {
@@ -33,5 +39,25 @@ class Dot {
         s += this.edgeBuffer.distinct.mkString
         s += this.postscript
         s
+    }
+
+    def setPreamble(){
+        this.preamble = "graph g {" + 
+            "graph" + _graphParam +
+            "edge" + _edgeParam +
+            "node" + _nodeParam 
+    }
+}
+
+object Dot {
+
+    def apply(gs: String, es: String, ns: String)={
+
+        var d = new Dot()
+        d.graphParam = gs
+        d.edgeParam = es
+        d.nodeParam = ns
+        d.setPreamble
+        d
     }
 }
