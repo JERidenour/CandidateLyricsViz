@@ -1,8 +1,8 @@
-[Click here for a full size image of the Candidate Cluster graph](http://jonathanridenour.net/projects/candidate_cluster.html).
+[Click here for a full size image of the Candidate Cluster graph](http://jonathanridenour.net/projects/CandidateCluster.svg).
 
 ![Candidate Cluster png](https://github.com/JERidenour/CandidateLyricsViz/blob/master/src/main/resources/CandidateCluster.png)
 
-[Click here for a full size image of the Candidate Hub graph](http://www.jonathanridenour.net/projects/candidate_hub.html).
+[Click here for a full size image of the Candidate Hub graph](http://www.jonathanridenour.net/projects/CandidateHub.svg).
 
 ![Candidate Hub png](https://github.com/JERidenour/CandidateLyricsViz/blob/master/src/main/resources/CandidateHub.png)
 
