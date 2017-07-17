@@ -21,7 +21,15 @@ object CandidateCluster {
         val candidateColors = Array("#493829", "#3e000c", "#564787", 
             "#8ed081", "#404f24", "#4c86a8", "#360568", "#9e2a2b")
 
-        val dot = new Dot()
+        // set the drawing parameters for the dot object
+        var graph = "[overlap=false " + 
+            "outputorder=edgesfirst " +
+            "size=24];"
+        var edge = "[weight=2, penwidth=5];"
+        var node = "[fontsize=32 width=5 " + 
+            "shape=ellipse style=filled fillcolor=white];"
+
+        val dot = Dot.apply(graph, edge, node)
 
         // create a node for each artist
         artists.foreach { dot.nodeBuffer += Node.apply(_)  }
