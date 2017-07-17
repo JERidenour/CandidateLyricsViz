@@ -11,9 +11,6 @@ class Dot {
     private var _nodeParam = "[fontsize=32 width=5 " + 
         "shape=ellipse style=filled fillcolor=white];"
 
-        //"graph [overlap=false outputorder=edgesfirst size=24];" + //CandidateCluster
-        //"node [style=filled fillcolor=white];" //CandidateCluster
-
     var nodeBuffer = new ArrayBuffer[Node]
     var edgeBuffer = new ArrayBuffer[Edge]
     
